@@ -109,16 +109,31 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="itx-G4-Kq0">
                                 <rect key="frame" x="197" y="188.66666666666666" width="20" height="20"/>
                             </activityIndicatorView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uw6-P7-AXZ">
+                                <rect key="frame" x="20" y="545" width="374" height="171"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fX8-5Y-yyS">
+                                <rect key="frame" x="197" y="620.33333333333337" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="vvQ-Ql-Mup" firstAttribute="bottom" secondItem="uw6-P7-AXZ" secondAttribute="bottom" constant="20" id="1pY-5i-pTN"/>
                             <constraint firstItem="itx-G4-Kq0" firstAttribute="centerY" secondItem="5F8-7N-y3U" secondAttribute="centerY" id="2KJ-c0-4Fk"/>
                             <constraint firstItem="gMS-jF-aCO" firstAttribute="centerY" secondItem="Lol-Lq-fn6" secondAttribute="centerY" id="2L8-y3-jyx"/>
                             <constraint firstItem="vvQ-Ql-Mup" firstAttribute="trailing" secondItem="eMa-do-RvV" secondAttribute="trailing" constant="20" id="3r7-Yz-asG"/>
                             <constraint firstItem="Xm6-gQ-V0a" firstAttribute="top" secondItem="eMa-do-RvV" secondAttribute="bottom" constant="20" id="6ll-Rw-7Hh"/>
+                            <constraint firstItem="uw6-P7-AXZ" firstAttribute="top" secondItem="Xm6-gQ-V0a" secondAttribute="bottom" constant="10" id="B83-Q1-afL"/>
                             <constraint firstItem="eMa-do-RvV" firstAttribute="top" secondItem="r5G-m1-4P3" secondAttribute="bottom" constant="10" id="Cts-gB-wPR"/>
                             <constraint firstItem="5F8-7N-y3U" firstAttribute="leading" secondItem="vvQ-Ql-Mup" secondAttribute="leading" constant="20" id="H1Y-bD-wlz"/>
+                            <constraint firstItem="uw6-P7-AXZ" firstAttribute="leading" secondItem="vvQ-Ql-Mup" secondAttribute="leading" constant="20" id="NuG-4d-jRp"/>
+                            <constraint firstItem="vvQ-Ql-Mup" firstAttribute="trailing" secondItem="uw6-P7-AXZ" secondAttribute="trailing" constant="20" id="OrO-Oy-vDR"/>
                             <constraint firstItem="Xm6-gQ-V0a" firstAttribute="leading" secondItem="vvQ-Ql-Mup" secondAttribute="leading" constant="20" id="Q4i-6k-omH"/>
+                            <constraint firstItem="fX8-5Y-yyS" firstAttribute="centerY" secondItem="uw6-P7-AXZ" secondAttribute="centerY" id="THA-pg-XBH"/>
                             <constraint firstItem="eMa-do-RvV" firstAttribute="leading" secondItem="vvQ-Ql-Mup" secondAttribute="leading" constant="20" id="U9E-PR-AeB"/>
                             <constraint firstItem="r5G-m1-4P3" firstAttribute="leading" secondItem="vvQ-Ql-Mup" secondAttribute="leading" constant="20" id="Uin-Db-LvD"/>
                             <constraint firstItem="r5G-m1-4P3" firstAttribute="top" secondItem="BG0-Ng-fL8" secondAttribute="bottom" constant="10" id="ZfB-Ce-4KV"/>
@@ -129,6 +144,7 @@
                             <constraint firstItem="vvQ-Ql-Mup" firstAttribute="trailing" secondItem="r5G-m1-4P3" secondAttribute="trailing" constant="20" id="mnS-Pa-cvI"/>
                             <constraint firstItem="vvQ-Ql-Mup" firstAttribute="trailing" secondItem="Xm6-gQ-V0a" secondAttribute="trailing" constant="20" id="nt1-oR-ndB"/>
                             <constraint firstItem="vvQ-Ql-Mup" firstAttribute="trailing" secondItem="BG0-Ng-fL8" secondAttribute="trailing" constant="20" id="omE-cf-dMD"/>
+                            <constraint firstItem="fX8-5Y-yyS" firstAttribute="centerX" secondItem="uw6-P7-AXZ" secondAttribute="centerX" id="q3n-iJ-AEs"/>
                             <constraint firstItem="gMS-jF-aCO" firstAttribute="top" secondItem="5F8-7N-y3U" secondAttribute="bottom" constant="20" id="q6e-Qm-r8h"/>
                             <constraint firstItem="vvQ-Ql-Mup" firstAttribute="trailing" secondItem="5F8-7N-y3U" secondAttribute="trailing" constant="20" id="w4o-pg-FqK"/>
                             <constraint firstItem="5F8-7N-y3U" firstAttribute="top" secondItem="vvQ-Ql-Mup" secondAttribute="top" constant="20" id="zJW-kS-oEa"/>
@@ -138,6 +154,8 @@
                     <navigationItem key="navigationItem" id="LYa-ST-YXn"/>
                     <connections>
                         <outlet property="catchButton" destination="Xm6-gQ-V0a" id="bFU-YI-dVt"/>
+                        <outlet property="descriptionLabel" destination="uw6-P7-AXZ" id="Rgo-00-fOj"/>
+                        <outlet property="descriptionLoadingIndicator" destination="fX8-5Y-yyS" id="vYq-CX-aDA"/>
                         <outlet property="imageLabel" destination="5F8-7N-y3U" id="RNe-Q7-cZf"/>
                         <outlet property="imageLoadingIndicator" destination="itx-G4-Kq0" id="LsO-wR-9oz"/>
                         <outlet property="nameLabel" destination="gMS-jF-aCO" id="SKp-Qi-PYX"/>
@@ -148,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7x-o0-MGh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1667" y="121"/>
+            <point key="canvasLocation" x="1666.6666666666667" y="120.65217391304348"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Cyf-gj-S5L">

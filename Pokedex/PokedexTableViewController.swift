@@ -13,7 +13,7 @@ class PokedexTableViewController: UITableViewController, UISearchBarDelegate {
 
     var pokemonsList = [Pokemon]()
 
-    lazy var matchPokemons = pokemonsList
+    var matchPokemons =  [Pokemon]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,8 @@ class PokedexTableViewController: UITableViewController, UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if !searchText.isEmpty {
             matchPokemons = findPokemonMatch(from: searchText.lowercased())
+        } else {
+            matchPokemons = pokemonsList
         }
         tableView.reloadData()
     }
@@ -79,6 +81,7 @@ class PokedexTableViewController: UITableViewController, UISearchBarDelegate {
             do {
                 let pokemonList = try JSONDecoder().decode(PokemonList.self, from: data)
                 self.pokemonsList = pokemonList.results
+                self.matchPokemons = self.pokemonsList
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
