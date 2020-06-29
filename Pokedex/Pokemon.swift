@@ -8,9 +8,41 @@
 
 import Foundation
 
-struct Pokemon{
-    
+struct PokemonList: Codable {
+    let results: [Pokemon]
+}
+
+struct Pokemon: Codable {
     let name: String
-    let number: Int
-    
+    let url: String
+    var isCatched: Bool {
+        if !UserDefaults.contains(name) {
+            UserDefaults.standard.set(false, forKey: name)
+        }
+        return UserDefaults.standard.bool(forKey: name)
+    }
+
+    private enum CodingKeys: String, CodingKey {
+        case name, url
+    }
+}
+
+struct PokemonData: Codable {
+    let id: Int
+    let types: [PokemonTypeEntry]
+    let sprites: PokemonImage
+}
+
+struct PokemonType: Codable {
+    let name: String
+    let url: String
+}
+
+struct PokemonTypeEntry: Codable {
+    let slot: Int
+    let type: PokemonType
+}
+
+struct PokemonImage: Codable {
+    let front_default: String
 }
